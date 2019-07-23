@@ -1,0 +1,43 @@
+.banner {
+  font-style: helvetica;
+}
+img:hover {
+  width: 100 px;
+  height: 50 px;
+  image-align: center;
+}
+img:active {
+  filter: invert(70%)
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+.banner {
+  background-color: #f57c78;
+}
+.command {
+  background-color: #2e6e09;
+}
+.thingy {
+  background-color: #ebc7e0;
+}
+.hi {
+  background-color: #064f09;
+}
+.li {
+  background-color: black
+}
