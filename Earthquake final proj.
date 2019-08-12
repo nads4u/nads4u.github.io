@@ -1,0 +1,209 @@
+# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+define n = Character("Narrator", color="#0b9eb5")
+define r = Character("Richard Fault", color="#faf32d")
+define m = Character("Mom", color="#ad1728")
+define d = Character("Magnet", color="#5c4813")
+define e = Character("Elaina", color="#7a0aa6")
+
+
+# The game starts here.
+
+label start:
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    scene bg room
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    show richard
+
+    # These display lines of dialogue.
+
+    r "My, what an exhausting day at school!"
+
+    r "All we just learned was more blah blah boring nonsense..."
+
+    r "Since when have we ever had to worry about an EARTHQUAKE occuring? Especially here in NEW YORK?"
+
+    r "Oh well, better start on my homework now so I don't forget about it later."
+
+    show dog
+
+    play audio "labrador-barking-daniel_simon.mp3"
+
+
+    r "Whats wrong, boy?"
+    d "WOOF! WOOF WOOF!"
+    r "Hey, calm down..calm down boy!"
+
+    n "Suddenly, the room shook with a unsettling tremor."
+    r "What was that? Magnet,did you feel what I felt? It sounds like..."
+    n "Richard was interrupted by an audible crash coming from the kitchen downstairs."
+
+    play audio "labrador-barking-daniel_simon.mp3"
+
+    n "Magnet's barking persists, this time even louder than before."
+    n "Richard laughs nervously, concealing his fear with an unlikely explanation."
+    r "You know, this racket is probably just coming from Mom making her signature devilled eggs when she just happened to drop her frying pan. No--"
+    n "The shattering of glass was heard downstairs, followed by another violentshake."
+    r "AAAH!"
+    n "Richard screamed as he fell over, the force of the quake causing him to fall to the ground."
+    r "Never mind what I said.. something is definitely going on."
+    n "In this time frame, Magnet bolted downstairs with a single whimper."
+
+    hide dog
+
+    r "Magnet, no! Come back!!!"
+    n "But Richard was left alone, unsure of what to do next."
+
+menu:
+    "What should I do?"
+
+    "Go downstairs and try to find your dog!":
+        scene bg livingroom
+        show mom
+        show richard
+        r "Mom, Magnet is missing! What do I do?"
+        m "You have to stay downstairs, it's the safest place you can be during an earthquake."
+        n "You listen to your mother's words carefully, yet feel awful as a pet owner to neglect Magnet, your beloved pet and best friend who you've known for 12 years."
+
+        menu:
+            "What's the thing I have to do?"
+
+            "Chase after Magnet, he means the world to me!":
+                n "Magnet runs laps outside until he veers away from the household, and shortly after, makes way into a nearby supermarket."
+                n "You spot the supermarket and head inside, knowing it will serve you well."
+                scene bg supermarket
+                show richard
+                r "Hmm, this supermarket sure looks like it will come in handy.."
+                n "You decide to hoarde as much food as you possibly could in your shopping cart. You do this in the quickest manner, not hesitating for a second so you don't risk getting caught."
+                menu:
+                    "What food are you stealing?"
+
+                        "Non-perishable food items including granola bars, fruit cups, and canned vegetables.":
+                            n "You made the right decision by choosing to purchase foods that will last you the longest. You even manage to bring some dog treats along.
+                            n "After quickly buying the necessities, you choose to chase after your precious good doggie boi and get back home safely."
+
+
+                    "Might as well live your last day to the fullest with twinkies, icecream, and more icecream!:
+                        n "You decide to live while you can and purchase all the food iterms you know your mother would never approve."
+                        n "To your mistake, you get so caught up in your edible purchases that you don't realize your dog has ran even further away from you."
+                        r "How could I be so careless!"
+                        n "You bawl over the loss of your dog and walk home in sadness, mentally preparing yourself to reveal the news to your mother."
+                        n "On the way back home you aren't being very cautious of the road surrounding you when you get run over by a passing car. Try again?"
+                        return
+
+            "Remain by your mother's side, she was there for me since day one!":
+                scene bg room
+                show richard
+                show mom
+                n "You spend quality time with your mother indoors in an effort to stay protected from the quake. Your mother brings up a valid concern, however."
+                m "Honey, it's great that we're safe in here together, but what are we going to do about food?"
+                n "Before you have the opportunity to answer your mother's inquiries, your next-door neighbor and friend from school, Elaina, enters your house through the now-broken door."
+                show elaina
+                r "Elaina, what are you doing here? You're not supposed to go outside during an earthquake!"
+                m "Richard is right, you could've gotten yourself severely injured or killed out there!"
+                e "That's besides the point. I brought food, there is enough for all of us. We can't risk anyone else going outside in this condition."
+                n "Suddenly, the room shook again with an unsettling tremor."
+                e "Everyone, drop wherever you are onto your hands and knees! Cover your head and neck with your arms! Hold on tight, and do everything I say!"
+
+                menu:
+                    "Do you.."
+
+                    "Listen obediently, because she seems to know what she is doing!":
+                        n "You survive the blast, feeling safe and unharmed, as you and your mother follow all safety protocols and attempt to survive the quake for the rest of its duration."
+
+
+                        return
+
+
+                    "Get cocky and follow your own mind instead, she could be wrong!":
+                        n "You get up and foolishly pace around the house, proving your friend wrong for just one moment."
+                        r "RICHARD!!! What do you think you are doing!? You're putting yourself in harm's way!"
+                        m "Get down, Richard, please! This could cost you your life!"
+
+                        menu:
+                            "Do you still.."
+
+                            "Refuse to listen -- I know what I'm doing!":
+                                n "The next blast knocks you forward out of the open window of your house."
+                                n "Without warning, you plummet 50 feet to your death."
+                                r "AAAAAAAAAAAAH!!!!"
+                                n "You should've listened to your mom and friend. Try again?"
+                                return
+
+                            "I changed my mind, maybe I should listen to the others...":
+                                n "You duck down, following their orders as a fortunate change of mind."
+                                m "What were you thinking? *hits Richard on head*"
+                                e "Thank goodness you're okay! *hugs Richard*"
+                                r "I'm sorry. I guess I was so caught up in the moment I panicked... *blushes in embarassment*"
+                                n "---The shaking comes to a full stop.----"
+                                m "Do we get up, or not yet?"
+                                e "We can't be so sure it's really ov--"
+                                n "But before she could continue, she suddenly passed out onto Richard's shoulder."
+                                n "Richard quickly caught her before she hit the ground."
+                                r "Elaina, what happend?!? Are you okay???!!!"
+                                menu:
+                                    "Do you..."
+
+                                    "PANIC and DO NOTHING!":
+                                        n "You leave your best friend limp until she goes motionless before you or your mother had any time to react."
+                                        n "She died in front of your own eyes, now leaving you two with no guidance or means to survive to survive this disaster. Try again?"
+                                        return
+
+
+                                    "ARE YOU KIDDING, SHE'S MY BEST FRIEND! SAVE HER LIFE!":
+                                        n "You perform CPR on her (as awkward as it may be in the midst of an earthquake) because you couldn't think of any other way to repay her for helping you survive this far, and just for being a good friend in general."
+                                        n "She wakes up with a stir, and before you know it, she is conscious again."
+                                        e "What-- what happened to me?"
+                                        menu:
+
+                                            "Do you..."
+
+                                                "Lie and tell her that the force of the quake overpowered her":
+                                                    e "Is that so? So how come neither of you were impacted like me?"
+                                                    n "Richard gulped and fabricated a silly explanation."
+                                                    r "Cause we're stronger...?"
+                                                    n "Elaina rolled her eyes as she placed her hands over her hips."
+                                                    e "You're gonna have to try harder if you want to survive this, Mr. Fault."
+                                                    e "I refuse to help you out any longer. Good luck, you'll need it!"
+                                                    n "She angrily stormed away, going back to her apartment and leaving you at a loss of what to do to survive."
+                                                    n "Try again?"
+                                                    return
+
+                                                    "Tell the truth and tell her she was probably in shock over this entire situation":
+                                                        e "Oh, that's scary. Thank you for being honest with me, though."
+                                                        e "I guess we should stick together, because we never know what could happen next."
+                                                        m "I think that we should all go upstairs. It seems that everything's done shaking now."
+                                                        r "Or should we stay down here for a few more hours until we are 100% sure its safe to get to higher ground?"
+                                                        n "You all mutually agree to stay downstairs, eating all the food you missed out in the previous meals."
+                                                        n "After about three and a half hours later, a report on the radio said the earthquake was now over."
+                                                        n "All 3 of you breathed a sigh of relief as you high-fived each other."
+                                                        r "Good job everybody!"
+                                                        e "We're so lucky we survived!"
+                                                        m "I'm so proud of all of us!"
+                                                        show dog
+                                                        n "Magnet pranced happily into the room, wagging his tail excitedly."
+                                                        d "Woof woof!"
+                                                        r "Yes, I'm proud of you too boy."
+                                                        n "Richard showered his doggo with love, affection, and treats galore."
+                                                        n "The troubling earthquake was a problem no more."
+                                                        n "CONGRATULATIONS, YOU WON THE GAME!! YOU ARE A NATURAL DISASTER SIMULATOR SUPER SURVIVOR!"
+                                                        n "In a moment, you will be able to go back to the homepage and replay your choices, perhaps ending with another outcome."
+                                                        n "Thanks for playing, and I hope you enjoyed the Earthquake mode of our Natural Disaster Simulator project!"
+                                                        return
+
+
+
+
+    "Stay upstairs and hope the room stops shaking!":
+            n "You stay barricaded in your room, trapped for hours and soon days, trapped under rubble.. where you die of starvation. Try again"
+            return
