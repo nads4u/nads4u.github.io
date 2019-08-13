@@ -1,0 +1,294 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define w = Character("Wendy DeBreeze", color="#39EEA9")
+define f = Character("Farmer DeBreeze", color="#434009")
+define n = Character("Narrator", color="#F4E805")
+define x = Character("Grandpa", color="#2DF405")
+define y = Character("Grandma", color="#C585F7")
+
+
+# The game starts here.
+
+label start:
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    scene farm
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+
+    # These display lines of dialogue.
+
+
+n "It is the year 1998 in the state of Wyoming. It was a relatively warm April afternoon, when Wendy was helping her father, Farmer Debreeze, tend to the crops and animals on their farm they have owned for a number of years now."
+show farmer
+f "Wendy, could you please pass me the shovel and spade? And could you make sure the horses are maintained safely in their pens?"
+hide farmer
+show mc
+w  "Sure, father."
+
+n "Wendy had begun to grow tired of working endlessly, small beads of sweat forming on her forehead. She politely asked her father a question."
+
+w "Do you mind if I take a break right now?"
+hide mc
+show farmer
+f "Of course Wendy, but please don’t wander far. We don’t want you to end up getting lost like what happened last time, now do we?"
+hide farmer
+show mc
+
+w "You’re right. I’ll be careful, I promise!"
+hide mc
+
+scene barn
+show mc
+
+n "Wendy wanders back to the shed to get some water. What she fails to see behind her is a rapidly rotating column of air that looks like it is heading its way to the barn."
+
+n "Suddenly, she hears an uproar of moos and clucks coming from the animals from a distance. She becomes nervous and thinks they’ve somehow managed to escape from their rightful place."
+
+w "Father, did you hear that? Are the animals okay?"
+hide mc
+n "She called out to her father a number of times, yet she received no response. Then she really began to grow concerned."
+
+menu:
+    "What should she do next?"
+
+    "Run over to your father and animals and check up on them, they could be in danger!":
+        show mc
+        n "You anxiously sprint over to the source of the sound, when you look up at the sky and see an enormous cloud of smoke already carrying now-broken fences and miscellaneous farm supplies. You fear for the safety of you, your father, and the animals, because you are now on the imminent path of danger."
+        hide mc
+        show farmer
+        f "Wendy, we need to duck down and lie on the floor! Face-down!"
+        n "Your father’s unnaturally commanding nature of his comments catch you off guard, panicking you to a certain extent."
+        f "Protect the back of your head with your arms. Get as far away from trees and cars as you can."
+        hide farmer
+
+        menu:
+            "Which do you choose to do?"
+
+            "Follow your father’s commands, he seems to know what he’s talking about!":
+                n "You decide to heed your father’s instructions and duck down, knowing very well that standing up exposes you to  surrounding hazardous conditions, such as falling trees or crashing cars."
+                show farmer
+                f "Thank goodness, Wendy. For a second there I thought you had other plans. You had me worried to death!"
+                hide farmer
+                n "At this point the both of you were down on the ground, leaving nothing to do but to watch the scene unfold around the two of you."
+                show mc
+                w "I’d never betray you like that. But what do we do now, father?"
+                hide mc
+                n "There remains an uncomfortable silence as your father remained in thought."
+                show mc
+                w "I really hope the flying debris doesn’t impact any of the animals.. They could get seriously injured if we don’t do anything about it!"
+                hide mc
+                show farmer
+                f "It looks like the tornado has plans to go elsewhere… quickly, gather all the animals you can before it comes closer to us on its path of destruction!"
+                show mc
+                w "Uh…"
+                hide mc
+
+                menu:
+                    "Do you..."
+
+                    "Choose to gather all animals -- they don’t deserve to suffer!":
+                        n "Because of your caring nature, you can’t bear the thought of leaving behind the animals you’ve known and taken care of for all these years. You gather all the animals you could in their pens and cages as quickly as you and your father could, and you hit the road safe and sound."
+                        scene car
+                        n "On the road, you decide to ask your father the question you’ve both been secretly wondering."
+                        show mc
+                        w "What are we going to do next?"
+                        hide mc
+                        show farmer
+                        f "Well, he said assuringly, we could always pay Gram and Gramps a visit, watcha think about that?"
+                        hide farmer
+                        show mc
+                        w "Well dad, I learned from Earth Science class that damage paths of tornadoes can be in excess of one mile wide and 50 miles long, so how can we be so sure that it’s safe for us to still be on the road?"
+                        hide mc
+                        show farmer
+                        f "You’re right, Wends. I guess another alternative would be to just drive until we are far enough from the tornado and just take cover for the night. What do you think about this idea?"
+                        hide farmer
+                        menu:
+                            "What do you suggest?"
+
+                            "I think it’s safer to stay with the ones you know and love, Grandma and Grandpa!":
+                                scene grandparentshouse
+                                n "It had been  a risky journey, but the pair eventually make their way to Wendy’s grandparents’ house in Southern Wyoming."
+                                show grandma
+                                x "Ah, child! And my child’s child! Welcome! What brings you here?"
+                                hide grandma
+                                show farmer
+                                f "Well Mama, long story short we got caught up in a mighty tornado in Northern Wyoming, and thought it was best to come up here to take shelter."
+                                hide farmer
+                                show mc
+                                w "And to see you guys, of course, I added."
+                                hide mc
+                                show grandfather
+                                y "Why, it sounds like you two embarked on quite the adventure!"
+                                hide grandfather
+                                show mc
+                                w "I guess you could call it that.. But we’re glad we’re here, safe and sound."
+                                hide mc
+                                show grandma
+                                x "I’m so thankful you two are alright. Why don’t I go in the kitchen and make you your favorite meal?"
+                                hide grandma
+                                show farmer
+                                f "That sounds wonderful, mom. Wendy, you get to choose my dear."
+                                hide farmer
+                                menu:
+                                    "What would you like to eat for dinner?"
+
+                                    "Grilled chicken with chilli & sesame seeds, please!":
+                                        n "You all eat your dinner happily and in peace."
+                                        n "You watch the televised broadcast of the tornado and breathed a sigh of relief as you are all now were protected from the tornado."
+                                        show mc
+                                        n "CONGRATULATIONS!! YOU MADE IT TO THE END AND SURVIVED!!!"
+                                        hide mc
+                                        show farmer
+                                        f "In a moment once you exit, you can retry options or choose another natural disaster adventure to explore!"
+                                        hide farmer
+                                        show grandma
+                                        x "We thank you for playing the Tornado Survival Edition of our Natural Disaster Game.."
+                                        hide grandma
+                                        show grandpa
+                                        y "And we hope you have a wonderful day!"
+                                        return
+
+                                    "Penne Vegetable Casserole, please!":
+                                        n "You all eat your dinner happily and in peace."
+                                        n "You watch the televised broadcast of the tornado and breathed a sigh of relief as you are all now were protected from the tornado."
+                                        show mc
+                                        n "CONGRATULATIONS!! YOU MADE IT TO THE END AND SURVIVED!!!"
+                                        hide mc
+                                        show farmer
+                                        f "In a moment once you exit, you can retry options or choose another natural disaster adventure to explore!"
+                                        hide farmer
+                                        show grandma
+                                        x "We thank you for playing the Tornado Survival Edition of our Natural Disaster Game.."
+                                        hide grandma
+                                        show grandpa
+                                        y "And we hope you have a wonderful day!"
+                                        return
+
+                                    "Minty carrot, pistachio & feta salad, please!":
+                                        n "You all eat your dinner happily and in peace."
+                                        n "You watch the televised broadcast of the tornado and breathed a sigh of relief as you are all now were protected from the tornado."
+                                        show mc
+                                        n "CONGRATULATIONS!! YOU MADE IT TO THE END AND SURVIVED!!!"
+                                        hide mc
+                                        show farmer
+                                        f "In a moment once you exit, you can retry options or choose another natural disaster adventure to explore!"
+                                        hide farmer
+                                        show grandma
+                                        x "We thank you for playing the Tornado Survival Edition of our Natural Disaster Game.."
+                                        hide grandma
+                                        show grandpa
+                                        y "And we hope you have a wonderful day!"
+                                        return
+                            "We don’t have too much time to afford -- it’s better off just us two!":
+                                n "You and your father begin to embark on a journey to nowhere in particular, trying to find any safe spot to rest for the night."
+                                hide mc
+                                hide farmer
+                                show mc
+                                w "Uh, where are we, dad?"
+                                hide mc
+                                n "The two were now situated in an unhabited terrain."
+                                show farmer
+                                f "Just a little bit longer.. we're almost there. I think."
+                                hide farmer
+                                n "Her eyes widened."
+                                show mc
+                                w "You THINK? You mean to tell me we've been wandering around aimlessly this whole time?"
+                                hide mc
+                                show farmer
+                                f "Calm down, I'm sure we're near somewhere..."
+                                hide farmer
+                                show mc
+                                w "What direction, exactly, are we walking in?"
+                                hide mc
+                                show farmer
+                                f "Southeast. Or, maybe, was it Northwest?"
+                                hide farmer
+                                show mc
+                                w "Oh no. We're in trouble."
+                                hide mc
+                                n "And to nobody's surprise, the two kept on walking until their bodies couldn't take it anymore and they collapsed, dying of exhaustion. Try again?"
+
+                    "Only worry about saving you and your father -- we are the priority here!":
+                        n "You may have thought that leaving there as fast as possible without the extra burden of the accompanying creatures was the better decision -- but what you didn’t know is that the key to exit the farmland was back inside the barn that held the farmland."
+                        show farmer
+                        f "Oh no -- for crying out loud!"
+                        hide farmer
+                        n "Wendy’s heart leaped in her throat."
+                        show mc
+                        w "What’s the matter, father?"
+                        hide mc
+                        show farmer
+                        f "The key.. It’s…"
+                        hide farmer
+                        n "Wendy’s father didn’t even need to finish his sentence before she was able to put the pieces together and realize what was wrong."
+                        show mc
+                        w "We can go back, Wendy suggested nervously."
+                        hide mc
+                        n "Farmer Debreeze gulped."
+                        show farmer
+                        f "I’m afraid it’s too late, sweetheart."
+                        hide farmer
+                        show mc
+                        w "Please. We can do this. If we don’t, at least we’ll die knowing we tried."
+                        hide mc
+                        show farmer
+                        f "Hold my hand. On the count of three, we’ll try to outrun this beast. Ready?"
+                        hide farmer
+                        n "Wendy nodded, trembling in fear."
+                        show mc
+                        w "1…"
+                        hide mc
+                        show farmer
+                        f "2…"
+                        hide farmer
+                        n "Before they could finish counting, a beat before Wendy could manage to count to 3, an overpowering gust of wind sent them both falling to the ground, dazed and confused, as the deadly swirl carried them high above the ground and enveloping them into the sky, never quite letting them go. Try again?"
+                        return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            "Follow your own mind - what does he know that you do not?":
+                hide farmer
+                hide mc
+                n "Your stubborn nature brings out the worst of you as you refuse to follow through with your father’s warning. A wave of adrenaline flows through your body as you have the sudden urge to run away from the scene."
+                show farmer
+                f  "Wendy, what do you think you’re doing? You’re going to get yourself killed! Listen to me!"
+                hide farmer
+                show mc
+                w "I need to find help! Stay here, I’ll save both of us!"
+                hide mc
+                n "But before you know it, the tornado’s path cuts straight to you, and you get caught up in the spiral of madness which sends you flying straight into the nearby river, where you slowly drown to the bottom of the surface. Try again?"
+                return
+
+
+
+
+    "Stay where you are -- maybe the animals are just hungry!":
+        n "What originally sounded like animal-like complaints was actually the nearby howling of wind, carrying an enormous deadly funnel, containing enough force to knock you out cold until you die. Try again?"
+        return
